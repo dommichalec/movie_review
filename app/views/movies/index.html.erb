@@ -1,0 +1,7 @@
+<h1>There are <%= @movies.size %> movies in our system</h1>
+
+<ul>
+  <% @movies.each do |m| %>
+    <li><p><%= m.title %> has a rating of <%= m.rating %></p></li>
+  <% end %>
+</ul>

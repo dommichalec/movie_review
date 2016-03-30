@@ -1,7 +1,11 @@
-<h1>There are <%= @movies.size %> movies in our system</h1>
+<h1>We have <%= pluralize(@movies.size, 'movie')%> in our system</h1>
 
 <ul>
   <% @movies.each do |m| %>
-    <li><p><%= m.title %> has a rating of <%= m.rating %></p></li>
+    <li><p><strong><%= m.title %></strong> was <%= well_received?(m) %> with an average rating of <em><%= m.rating %></em></p>
+        <p><em><%= m.description %></em></p>
+        <p><strong>Release Date: <%= m.release_date.to_formatted_s(:long)%> (<%= time_ago_in_words(m.release_date.to_formatted_s(:long)) %> ago)</strong></p>
+        <p>Total Revenue: <%= format_to_million(m.total_gross) %></p>
+    </li>
   <% end %>
 </ul>

@@ -4,7 +4,7 @@ module MoviesHelper
     (price * 1_000_000).to_s(:currency)
   end
 
-  def well_received?(number)
-    number.popular? ? 'popular' : 'unpopular'
+  def well_received?(movie)
+    movie.popular? ? 'popular' : 'unpopular'
   end
 end

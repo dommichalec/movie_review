@@ -1,0 +1,7 @@
+<h1><%= @movie.title %></h1>
+<h4><em><%= @movie.description %></h4></em>
+<h2><em>Released on <%=@movie.format_default_date %></em></h2>
+<h2><em>Total box office revenue of <%= format_to_million(@movie.total_gross) %></h2>
+
+<%= link_to "All Movies", movies_path %> |
+<%= link_to "Edit", edit_movie_path(@movie.id) %>

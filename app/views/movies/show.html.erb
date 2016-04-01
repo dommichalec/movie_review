@@ -4,4 +4,5 @@
 <h2><em>Total box office revenue of <%= format_to_million(@movie.total_gross) %></h2>
 
 <%= link_to "All Movies", movies_path %> |
-<%= link_to "Edit", edit_movie_path(@movie.id) %>
+<%= link_to "Edit", edit_movie_path(@movie.id) %> |
+<%= link_to "Delete", movie_path(@movie.id), method: :delete, data: {confirm: "Are you sure you want to delete #{@movie.title}?"} %>

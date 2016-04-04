@@ -4,6 +4,7 @@
   <% @movies.each do |m| %>
     <li><p><strong><%= link_to(m.title, movie_path(m.id)) %></strong> was <%= well_received?(m) %> with an average rating of <em><%= m.rating %></em></p>
         <p><em><%= m.description %></em></p>
+        <p><%= image_for(m) %></p>
         <p><strong>Release Date: <%= m.release_date.to_formatted_s(:long)%> (<%= time_ago_in_words(m.release_date.to_formatted_s(:long)) %> ago)</strong></p>
         <p>Total Revenue: <%= format_to_million(m.total_gross) %></p>
     </li>

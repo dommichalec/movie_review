@@ -7,4 +7,8 @@ module MoviesHelper
   def well_received?(movie)
     movie.popular? ? 'popular' : 'unpopular'
   end
+
+  def image_for(movie)
+    movie.image_file_name.blank? ? image_tag('placeholder.gif') : image_tag(movie.image_file_name)
+  end
 end
